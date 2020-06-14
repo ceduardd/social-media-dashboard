@@ -1,0 +1,362 @@
+:root {
+  /* primary colors */
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%) 0%,
+    hsl(329, 70%, 58%) 100%
+  );
+  --youtube: hsl(348, 97%, 39%);
+  /* toogle */
+  --toogle-dark: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%) 0%,
+    hsl(146, 68%, 55%) 100%
+  );
+  --toogle-light: hsl(230, 22%, 74%);
+  /* dark theme */
+  --very-dark-blue-bg: hsl(230, 17%, 14%);
+  --very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
+  --dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+  --desaturated-blue-text: hsl(228, 34%, 66%);
+  --white-text: hsl(0, 0%, 100%);
+  /* light theme */
+  --white-bg: hsl(0, 0%, 100%);
+  --very-pale-blue-top-bg-pattern: hsl(225, 100%, 98%);
+  --light-grayish-blue-card-bg: hsl(227, 47%, 96%);
+  --dark-grayish-blue-text: hsl(228, 12%, 44%);
+  --very-dark-blue-text: hsl(230, 17%, 14%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+.header,
+.principal,
+.overview {
+  width: 90%;
+  max-width: 1100px;
+}
+
+h1,
+h2 {
+  transition: background 0.2s linear;
+}
+
+/* card light */
+.card {
+  background-color: var(--light-grayish-blue-card-bg);
+  border-radius: 8px;
+  transition: background 0.2s linear;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #e1e3f0;
+}
+
+/* card dark */
+.card-dark {
+  background-color: var(--dark-desaturated-blue-card-bg);
+}
+
+.card-dark:hover {
+  background-color: #333a56;
+}
+
+/* header */
+
+header {
+  background-color: var(--very-pale-blue-top-bg-pattern);
+  transition: background 0.2s linear;
+}
+
+.header-dark {
+  background-color: var(--very-dark-blue-top-bg-pattern);
+}
+
+.header {
+  height: 200px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--very-dark-blue-text);
+}
+
+.header-content {
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1,
+.header-content p {
+  margin: 0;
+  padding: 0;
+}
+
+.header-content h1 {
+  margin-bottom: 5px;
+}
+
+.header-content p {
+  color: var(--dark-grayish-blue-text);
+  font-weight: 700;
+}
+
+/* principal */
+
+.principal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin: 0 auto;
+  margin-top: -50px;
+}
+
+.principal img {
+  margin-right: 10px;
+}
+
+.card-big {
+  max-width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-big::before {
+  content: '';
+  height: 4px;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+#facebook::before {
+  background-color: var(--facebook);
+}
+
+#twitter::before {
+  background-color: var(--twitter);
+}
+
+#instagram::before {
+  background-image: var(--instagram);
+}
+
+#youtube::before {
+  background-color: var(--youtube);
+}
+
+.social-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--dark-grayish-blue-text);
+  font-weight: 700;
+}
+
+.followers {
+  text-align: center;
+}
+
+.followers-number {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.followers p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--dark-grayish-blue-text);
+}
+
+.followers-today {
+  display: flex;
+  align-items: center;
+}
+
+.up {
+  color: var(--lime-green);
+  font-weight: 700;
+}
+
+.down {
+  color: var(--bright-red);
+  font-weight: 700;
+}
+
+/* overview */
+
+.overview {
+  margin: 50px auto;
+}
+
+.overview .followers-today img {
+  margin-right: 10px;
+}
+
+h2 {
+  color: var(--dark-grayish-blue-text);
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card-small {
+  padding: 10px 30px;
+  color: var(--dark-grayish-blue-text);
+  font-weight: 700;
+}
+
+.grid-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1.2fr;
+  align-items: center;
+}
+
+.grid-item img,
+.grid-item .followers-today {
+  justify-self: end;
+}
+
+.metric-number {
+  margin: 0;
+  font-size: 2rem;
+  color: #000;
+}
+
+/* toogle */
+
+.toogle-container {
+  width: 130px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--toogle-light);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: var(--toogle-light);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 22px;
+  width: 46px;
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 18px;
+  width: 18px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.label-dark {
+  background-image: var(--toogle-dark);
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.dark-body {
+  background-color: var(--very-dark-blue-bg);
+}
+
+.white-text {
+  color: var(--white-text);
+}
+
+@media screen and (max-width: 1000px) {
+  .principal,
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .principal,
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header {
+    height: 250px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 200px;
+  }
+
+  .toogle-container {
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+  }
+
+  .toogle-container::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: var(--toogle-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .principal,
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
